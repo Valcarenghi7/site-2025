@@ -1,88 +1,74 @@
-<?php
-	session_start();
-?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<title> LOGIN | Meu Portal </title>
-	<!------------------------------------ HEAD ------------------------------------>
-	<?php include 'login/includes-login/head.php'; ?>
-    <!------------------------------------ HEAD ------------------------------------>
-</head>
-<body>
-	<header>
-        <!--------------------------------- HEADER --------------------------------->
-        <?php include 'login/includes-login/header.php'; ?>
-        <!--------------------------------- HEADER --------------------------------->
-    </header>
-	
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<form class="login100-form validate-form" method="POST" action="autentica.php">
-					<span class="login100-form-title p-b-26">
-						Bem Vindo!
-					</span>
-					<span class="login100-form-title p-b-48">
-						<i class="zmdi zmdi-font"></i>
-					</span>
-
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-						<input class="input100" type="text" name="email">
-						<span class="focus-input100" data-placeholder="Use seu e-mail"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="senha">
-						<span class="focus-input100" data-placeholder="Insira sua senha"></span>
-					</div>
-
-					<?php 
-						if(isset($_SESSION['nao_autenticado'])): 
-					?>
-					  <div class="input100 validate-input m-b-18">
-					    <div class="alert alert-danger" role="alert">
-						  <center> Usuário ou senha inválidos </center>
-						</div>
-					  </div>
-					<?php
-					  endif;
-					  unset($_SESSION['nao_autenticado']);
-					?>
-
-					<div class="container-login100-form-btn">
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
-								Entrar
-							</button>
+		<?php 
+			session_start();
+		?>
+		<!doctype html>
+		<html lang="en">
+		<head>
+			<title> Faça Login</title>
+			<?php include 'login/includes-login/head.php'; ?>
+			</head>
+			<body>
+			<header>
+			<?php include 'login/includes-login/header.php'; ?>
+			</header>
+			<section class="ftco-section">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-md-6 text-center mb-5">
+							<h2 class="heading-section">Bem Vindo!</h2>
 						</div>
 					</div>
+					<div class="row justify-content-center">
+						<div class="col-md-6 col-lg-5">
+							<div class="login-wrap p-4 p-md-5">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="fa fa-user-o"></span>
+						</div>
+						<h3 class="text-center mb-4">Tem uma conta?</h3>
+					<form class="login-form" method="POST" action="autentica.php">
+							<div class="form-group">
+								<input type="email" class="form-control rounded-left" placeholder="Nome do Usuario" name="email" required>
+							</div>
+						<div class="form-group d-flex">
+						<input type="password" class="form-control rounded-left" placeholder="Senha" name="senha" required>
+						</div>
 
-					<div class="text-center p-t-115">
-						<span class="txt1">
-							Não tem acesso?
-						</span>
-
-						<a class="txt2" href="#">
-							Entre em contato
-						</a>
+						<?php if(isset($_SESSION['nao_autenticado'])):?>
+							<div class="input100 validate-input m-b-18">
+							<div class="alert alert-danger" role="alert"> 
+								<center> Usuario ou Senha invalidos </center>
+						</div>
+						</div>
+						<?php
+							endif;
+							unset($_SESSION['nao_autenticado']);
+						?>
+						
+							<div class="form-group d-md-flex">
+							<div class="w-50">
+								<label class="checkbox-wrap checkbox-primary">Lembrar meu login
+											<input type="checkbox" checked>
+											<span class="checkmark"></span>
+											</label>
+										</div>
+										<div class="w-50 text-md-right">
+											<a href="#">Esqueceu sua senha?</a>
+										</div>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary rounded submit p-3 px-5">Conecte-se</button>
+						</div>
+					</form>
 					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	
+						</div>
+					</div>
+				</div>
+			</section>
 
-	<div id="dropDownSelect1"></div>
+		
+			<footer>
+			<?php include 'login/includes-login/footer.php'; ?>
+			<footer>
+			</body>
+		</html>
 
-	<footer>
-        <!------------------------------- FOOTER ----------------------------------->
-        <?php include 'login/includes-login/footer.php'; ?>
-        <!------------------------------- FOOTER ----------------------------------->
-    </footer>
-</body>
-</html>

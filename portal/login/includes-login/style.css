@@ -1,15 +1,11 @@
 a#header {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
-a#header2 {
-    color: black;
-}
-
-footer {
+footer{
     text-align: center;
     padding: 3px;
-    background-color: blue;
-    color: white;
-    display: block;
-  }
+    background-color:blue;
+    color:white;
+    display:block;
+}
