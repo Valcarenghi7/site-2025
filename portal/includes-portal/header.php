@@ -26,7 +26,7 @@ session_start();
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="planos.php"><i class="fa fa-address-card">&ensp;</i> Cliente </a></li>
-            <li><a class="dropdown-item" href="planos.php"><i class="fa fa-cart-plus">&ensp;</i> Planos</a></li>
+            <li><a class="dropdown-item" href="form_plano.php"><i class="fa fa-cart-plus">&ensp;</i> Planos</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="planos.php"><i class="fa fa-calendar">&ensp;</i> Atendimento</a></li>
           </ul>
