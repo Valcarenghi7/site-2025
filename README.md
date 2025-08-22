@@ -1,2 +1,2 @@
-# site-2025
-Projeto de Desenvolvimento de WEBSITE em Aula
+# projeto-turma31-2025
+Projeto de desenvolvimento WEB
