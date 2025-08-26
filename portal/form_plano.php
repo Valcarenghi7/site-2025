@@ -6,15 +6,11 @@
 <html lang="pt-br">
     <head> 
         <title> INÍCIO | Meu Portal </title>
-        <!------------------------------------ HEAD ------------------------------------>
         <?php include 'includes-portal/head.php'; ?>
-        <!------------------------------------ HEAD ------------------------------------>
     </head>
     <body>
         <header>
-            <!--------------------------------- HEADER --------------------------------->
             <?php include 'includes-portal/header.php'; ?>
-            <!--------------------------------- HEADER --------------------------------->
         </header>
         <div class="container">
             <br>
@@ -38,11 +34,21 @@
                         <input type="text" class="form-control" placeholder="R$ 0,00">
                     </div>
                 </div>
+                <hr>
+                <button type="submit" class="btn btn-primary" name="send" id="send">
+                    <i class='fa fa-paste' style="font-size:25px";></i>
+                Cadastrar
+                </button>
+                <button type="button" class="btn btn-warning" name="limpa" id="limpa" onclick='form.reset()'>
+                <i class='fa fa-eraser' style="font-size:25px;"></i>
+                <br>
+                Limpar
+                </button>
             </form>
 
             <br>
         </div>
-        <footer>>
+        <footer>
             <?php include 'includes-portal/footer.php'; ?>
         </footer>
     </body>
