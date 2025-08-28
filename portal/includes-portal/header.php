@@ -1,18 +1,28 @@
 <?php
 session_start();
+
+// Verifica se o operador está autenticado
+if (isset($_SESSION['nome_operador']) && isset($_SESSION['sobrenome_operador'])) {
+    $operador = $_SESSION['nome_operador'] . ' ' . $_SESSION['sobrenome_operador'];
+} else {
+    $operador = 'Convidado'; // Ou você pode redirecionar para login se preferir
+}
 ?>
+
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="midias-portal/img/logo.png" alt="Logo" width="50" height="40" class="d-inline-block align-text-top">
     </a>
-    <i class='fa fa-user-circle' style='font-size:24px'>&ensp;<?php echo $operador?></i>
+    <i class='fa fa-user-circle' style='font-size:24px'>&ensp;<?php echo $operador ?></i>
+  </div>
 </nav>
 
 <nav class="navbar navbar-expand-lg bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -22,7 +32,7 @@ session_start();
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="header">
-          <i class="fa fa-plus">&ensp;</i>ADICIONAR
+            <i class="fa fa-plus">&ensp;</i>ADICIONAR
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="planos.php"><i class="fa fa-address-card">&ensp;</i> Cliente </a></li>
@@ -32,11 +42,11 @@ session_start();
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" id="header"><i class="fa fa-credit-card-alt"></i>&ensp;</i>Faturas</a>
+          <a class="nav-link" href="#" id="header"><i class="fa fa-credit-card-alt"></i>&ensp;Faturas</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="header">
-          <i class="fa fa-server">&ensp;</i>LISTAR
+            <i class="fa fa-server">&ensp;</i>LISTAR
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="planos.php"><i class="fa fa-address-card">&ensp;</i> Clientes </a></li>
@@ -46,7 +56,7 @@ session_start();
           </ul>
         </li>
       </ul>
-      <a href="logout.php" class="btn btn-outline-light"><i class="fa fa-reply"></i>&ensp;</i> Sair </a>
+      <a href="logout.php" class="btn btn-outline-light"><i class="fa fa-reply"></i>&ensp;Sair</a>
     </div>
   </div>
 </nav>
