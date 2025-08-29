@@ -1,20 +1,10 @@
-<?php
-session_start();
-
-// Verifica se o operador está autenticado
-if (isset($_SESSION['nome_operador']) && isset($_SESSION['sobrenome_operador'])) {
-    $operador = $_SESSION['nome_operador'] . ' ' . $_SESSION['sobrenome_operador'];
-} else {
-    $operador = 'Convidado'; // Ou você pode redirecionar para login se preferir
-}
-?>
 
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="midias-portal/img/logo.png" alt="Logo" width="50" height="40" class="d-inline-block align-text-top">
     </a>
-    <i class='fa fa-user-circle' style='font-size:24px'>&ensp;<?php echo $operador ?></i>
+    <i class='fa fa-user-circle' style='font-size:24px'>&ensp;<?php echo $operador." ".$sobrenome_operador?></i>
   </div>
 </nav>
 
@@ -30,6 +20,7 @@ if (isset($_SESSION['nome_operador']) && isset($_SESSION['sobrenome_operador']))
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="index.php" id="header"><i class="fa fa-thumb-tack">&ensp;</i>Início</a>
         </li>
+        <?php if($_SESSION['nivel']!='3'){ ?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="header">
             <i class="fa fa-plus">&ensp;</i>ADICIONAR
@@ -41,19 +32,9 @@ if (isset($_SESSION['nome_operador']) && isset($_SESSION['sobrenome_operador']))
             <li><a class="dropdown-item" href="planos.php"><i class="fa fa-calendar">&ensp;</i> Atendimento</a></li>
           </ul>
         </li>
+        <?php } ?>
         <li class="nav-item">
           <a class="nav-link" href="#" id="header"><i class="fa fa-credit-card-alt"></i>&ensp;Faturas</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="header">
-            <i class="fa fa-server">&ensp;</i>LISTAR
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="planos.php"><i class="fa fa-address-card">&ensp;</i> Clientes </a></li>
-            <li><a class="dropdown-item" href="planos.php"><i class="fa fa-cart-plus">&ensp;</i> Planos</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="planos.php"><i class="fa fa-calendar">&ensp;</i> Atendimentos</a></li>
-          </ul>
         </li>
       </ul>
       <a href="logout.php" class="btn btn-outline-light"><i class="fa fa-reply"></i>&ensp;Sair</a>

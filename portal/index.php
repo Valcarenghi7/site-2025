@@ -1,4 +1,8 @@
- <!doctype html>
+<?php
+    include('verifica_login.php');
+    include('conexao.php');
+?>
+<!doctype html>
 <html>
     
 <head>
