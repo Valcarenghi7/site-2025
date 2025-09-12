@@ -28,7 +28,12 @@ if(!in_array ($nivel, $niveldapagina)){
             <center><h5> PREENCHA OS CAMPOS ABAIXO PARA ADICIONAR UM NOVO PLANO </h5></center>
 
             <hr>
-
+            <?php
+                if(isset($_SESSION['msgFormPlano'])){
+                    echo $_SESSION['msgFormPlano'];
+                    unset($_SESSION['msgFormPlano']);
+                }
+            ?>
             <form action="cad_plano.php" method="POST">
                 <div class="form-row">
                     <div class="col">
