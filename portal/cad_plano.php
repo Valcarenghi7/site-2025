@@ -19,11 +19,11 @@
         $sql_code = "INSERT INTO planos (nome_plano, desc_plano, vlr_plano, dt_cad_plano) VALUES ('$nome_plano', '$desc_plano', '$vlr_plano', NOW())";
 
         if($conexao->query($sql_code) or die($conexao->error)){
-            $_SESSION['msgFormPlano'] = "<center><div class='alert alert-success' role='alert'> OK, plano inserido com sucesso!</div></center>";
-            header("Location:form_plano.php");
+            $_SESSION['msgListaPlano'] = "<center><div class='alert alert-success' role='alert'> OK, plano inserido com sucesso!</div></center>";
+            header("Location:lista_plano.php");
         } else{
-            $_SESSION['msgFormPlano'] = "<center><div class='alert alert-danger' role='alert'> ERRO, plano não foi inserido com sucesso!</div></center>";
-        header("Location:form_plano.php");
+            $_SESSION['msgListaPlano'] = "<center><div class='alert alert-danger' role='alert'> ERRO, plano não foi inserido com sucesso!</div></center>";
+        header("Location:lista_plano.php");
         }
 
     } else {

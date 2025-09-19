@@ -34,8 +34,21 @@
         </li>
         <?php } ?>
         <li class="nav-item">
-          <a class="nav-link" href="#" id="header"><i class="fa fa-credit-card-alt"></i>&ensp;Faturas</a>
+          <a class="nav-link" href="lista_fatura" id="header"><i class="fa fa-credit-card-alt"></i>&ensp;Faturas</a>
         </li>
+        <?php if($_SESSION['nivel']!='3'){ ?>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="header">
+            <i class="fa fa-plus">&ensp;</i>listar
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="planos.php"><i class="fa fa-address-card">&ensp;</i> Cliente </a></li>
+            <li><a class="dropdown-item" href="lista_plano.php"><i class="fa fa-cart-plus">&ensp;</i> Planos</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="planos.php"><i class="fa fa-calendar">&ensp;</i> Atendimento</a></li>
+          </ul>
+        </li>
+        <?php } ?>
       </ul>
       <a href="logout.php" class="btn btn-outline-light"><i class="fa fa-reply"></i>&ensp;Sair</a>
     </div>
