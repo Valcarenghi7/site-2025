@@ -62,7 +62,7 @@
                     <td><?php echo $dado['nome_plano']; ?></td>
                     <td><?php echo $dado ['desc_plano']; ?></td>
                     <td><?php echo $dado ['vlr_plano']; ?></td>
-                    <td><i class='fa fa-edit' style='font-size:24px'></i></td>
+                    <td><a href="edit_plano.php?id_plano=<?php echo $dado['id_plano']; ?>"><i class='fa fa-edit' style='font-size:24px'></i></a></td>
                     <td><i class='fa fa-trash' style='font-size:24px'></i></td>
                 </tr>
                 </tbody>
